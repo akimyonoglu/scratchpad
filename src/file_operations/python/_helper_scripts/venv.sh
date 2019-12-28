@@ -1,5 +1,5 @@
 #!/bin/bash
-source ~/.bash_profile
+source /home/vagrant/.bash_profile
 VENV_NAME="file_operations"
 VENV_EXISTS=`workon | grep "${VENV_NAME}"`
 if [ -z "${VENV_EXISTS}" ]; then

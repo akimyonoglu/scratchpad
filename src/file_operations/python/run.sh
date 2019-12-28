@@ -1,10 +1,6 @@
 #!/bin/bash
-source ~/.bash_profile
-bash _helper_scripts/venv.sh
-
 echo "############### TESTS #####################"
-echo "Running tests for the original solution."
+echo "Running tests for the origina solution SMALL."
 python original/file_operations.py tests/data/small.txt he
-
-echo "Running tests for the alternative solution."
-python alternative/file_operations.py tests/data/small.txt he
+echo "Running tests for the origina solution BIG."
+python original/file_operations.py tests/data/big.txt arkham

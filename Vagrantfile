@@ -2,6 +2,7 @@ Vagrant.configure("2") do |config|
     
     config.vm.box = "hashicorp/bionic64"
     config.vm.hostname = "scratchpad.box"
+    config.disksize.size = '10GB'
     
     config.vm.provider "virtualbox" do |v|
         v.memory = 1024
@@ -9,7 +10,7 @@ Vagrant.configure("2") do |config|
     end
     
     config.vm.provision :shell, path: "bootstrap.sh"
-    config.vm.synced_folder "src/", "/home/vagrant/src"
+    config.vm.synced_folder "src/", "/home/vagrant/src", :nfs => true 
     
     config.trigger.after [:provision] do |t|
         t.name = "Reboot after provisioning"
